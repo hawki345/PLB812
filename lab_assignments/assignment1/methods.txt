@@ -1,0 +1,7 @@
+Genome files, assembly and annotation for the Sorghum bicolor v3.1.1 genome, were downloaded from the Phytozome database in a zipped folder.
+The folder was unzipped using Microsoft File Explorer, due to my greater familiarity with its tools.
+The files, gzipped FASTA and .gff files, were uploaded to the HPCC using the MobaXterm interface.
+The files were unzipped using the gunzip command and the first 10 lines were printed using the head command.
+
+RNA sequence files for sorghum accession PRJNA319738, genotype IS22330, were downloaded as .fastq files using the sratoolkit prefetch and fastq-dump commands. 
+The first 10 lines of one .fastq file were printed using the head command.
