@@ -1,0 +1,7 @@
+The 12 fastq files downloaded in the previous lab assignment were used in this assignment.
+conda install was used to install fastqc on the hpcc cluster
+A shell script was written using the vim text editor, using the first lines to set the time, job name, and required resources.
+conda was added to the path as shown in the example script to enable use of the fastqc module
+A new directory was created to receive the html files outputted by fastqc.
+fastqc was used on all 12 fastq files, setting output to the new directory.
+However, due to an unknown issue, while the files were successfully created they were not placed in the correct directory.
