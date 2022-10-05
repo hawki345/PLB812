@@ -1,0 +1,6 @@
+Trimmomatic SE was used with the arguments TRAILING:29 and MINLEN:90 to trim the reads. 
+The trailing ends were trimmed with a threshold of 29 as previous analysis indicated that this would remove many of the lowest quality bases from the trailing end.
+The minimum length was set to 90 as the typical reads were ~200 bp and any read in which more than half of the bases were removed would necessarily be very low quality.
+In practice few or no reads were eliminated by the MINLEN operation.
+fastqc was used to create html quality control reports for each file.
+These reports indicated a general improvement in trailing end quality, with a moderate shortening of reads compared to the untrimmed files.
