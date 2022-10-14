@@ -1,0 +1,6 @@
+The gff of Sorghum genome annotations was first processed using gffread to create a .gtf file suitable for index construction.
+STAR was used to create an index from this file and the Sorghum reference genome fasta file.
+STAR was then used to align the paired end reads from each of the SRR files to the genome, with the output set to be sorted .bam files.
+The unpaired reads left by trimming elimination of their companions were aligned with STAR using the methods intended for single end reads.
+All necessary alignment statistics were extracted from the .Log.final.out files produced by STAR. 
+A high percentage of unique alignments was observed across all files.
