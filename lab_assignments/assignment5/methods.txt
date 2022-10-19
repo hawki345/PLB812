@@ -1,0 +1,18 @@
+Count tables were prepared from the alignment files using htseq-count, 
+with the -r set to pos as the alignment is sorted by position, 
+the -c set to output counts to a .tsv file, 
+and -s set to no as the data is unstranded.
+The six count tables were placed in a folder within the working directory for R.
+A sample table was made for the DESeq2 R package along with their condition information, three drought stress and three well-watered samples.
+The sample table and directory of count tables were read into a DESeq dataset with a one factor model based on condition.
+The condition factor was releveled to set "WW" for well watered as the reference.
+The dataset was filtered to remove all genes with less than 10 total transcripts.
+Size factors for each sample were estimated and printed out.
+ WW_1      WW_2      WW_3      DS_1      DS_2      DS_3 
+1.0061538 1.0241568 1.0963219 1.0015613 1.1317504 0.8379209 
+Dispersions were estimated using the estimateDispersions function and then plotted.
+The variance stabilizing transform was used on the dataset and used to make a sample distribution matrix which was used to plot a heatmap.
+The variance stabilized data was used for a PCA analysis, which revealed that the two conditions did not cluster closely or precisely.
+A negative binomial Wald test was performed on the dataset to call differential gene expression.
+The genes that were differentially expressed with an adjusted p value of <0.05 were counted.
+There were 191 genes that were differentially expressed at a 95% significance level between the drought stressed and well watered samples.
