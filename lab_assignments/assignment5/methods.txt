@@ -16,3 +16,4 @@ The variance stabilized data was used for a PCA analysis, which revealed that th
 A negative binomial Wald test was performed on the dataset to call differential gene expression.
 The genes that were differentially expressed with an adjusted p value of <0.05 were counted.
 There were 191 genes that were differentially expressed at a 95% significance level between the drought stressed and well watered samples.
+An MA plot was created using the function plotMA from the DESeq2 package. Owing to the wide distribution of the points, the y limits were expanded to c(-10,10) to display all points.
