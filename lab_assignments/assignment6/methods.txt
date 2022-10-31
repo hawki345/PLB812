@@ -1,0 +1,23 @@
+A tab separated annotation details file was downloaded from Phytozome and read into R.
+The adjusted p-values from the results table of Lab 5 was extracted as a vector and named according to the gene names, adjusted to match the naming conventions of the annotation details.
+The GO terms were extracted from the annotation details as a vector and named according to their gene names.
+Logical expressions were used on the vector of adjusted p-values to create two vectors encoding the significantly higher and lower expressed genes, respectively.
+These were encoded as 1 for the differentially expressed genes in the correct direction and 0 for other genes.
+New "topGOdata" objects were created for each direction of differential expression and GO category 
+using the vectors of differentially expressed genes for the allgenes argument, annFUN.gene2GO for the annot argument (in order to use the vector of GO terms as annotations), and the vector of GO terms for the gene2GO argument.
+
+Fisher tests were calculated for each "topGOdata" object using the runTest function with algorithm="parentchild" and statistic="fisher"
+The Gentable function was then used on the Fisher test and "topGOdata" objects to make readable tables for each combination of differential expression direction and GO term
+These 6 tables were then written to .tsv files
+For Biological Process GO Terms:
+1 GO term, "protein folding" had significant enrichment for higher expression at the p<0.05 level
+No GO terms had significant enrichment for lower expression at the p<0.05 level
+For Cell Component GO Terms:
+4 GO terms, "mitochondrion", "membrane-enclosed lumen", "intracellular organelle lumen", and "organelle lumen" had significant enrichment for higher expression at the p<0.05 level
+No GO terms had significant enrichment for lower expression at the p<0.05 level
+For Molecular Function GO Terms:
+5 GO terms, "binding", "nucleic acid binding", "hydrolase activity, acting on glycosyl b...", "organic cyclic compound binding", and "heterocyclic compound binding" had significant enrichment for higher expression at the p<0.05 level
+1 GO term, "catalytic activity" had significant enrichment for lower expression at the p<0.05 level.  
+
+
+
