@@ -1,0 +1,12 @@
+The assembly FASTA file of the latest Arabidopsis genome available on phytozome was downloaded and uploaded to the HPCC.
+prefetch and fastqdump were used to download SRR492407 and create two fastq files, separating the paired reads into these two files.
+fastqc was used on the fastq files and the reports uploaded to Github.
+trimmomatic was used with TRAILING:25 and LEADING:25 to trim all bases under phred 25 from the ends of the reads.
+fastqc was used on the trimmed fastq files and the reports uploaded to Github.
+While trimming produced two files each of paired and unpaired reads, only the paired reads were used going forward.
+bwa was installed for indexing and alignment.
+The assembly FASTA file was used to produce an index with the bwa index command.
+Owing to runtime constraints, it was deemed more practical to submit the alignment step to the queue as a shell script.
+The alignment shell script used bwa mem to align the fastq files of reads to the genome index, then piped the results through samtools view to samtools sort in order to produce a sorted .bam file
+The samtools flagstat command was used on the .bam file with results written to a file named mapping_statistics.flagstat to create a report on the mapping statistics.
+This report file was then uploaded to Github.
