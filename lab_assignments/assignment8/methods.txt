@@ -1,0 +1,11 @@
+The final .bam file from the previous lab assignment was used as an input file for the picard MarkDuplicates function.
+This function was called as gatk MarkDuplicates with output to marked_duplicates.bam file and metrics to a new .txt file. 
+This was all performed in a shell script submitted to the queue due to performance constraints in the development environments.
+head was used to print the first lines of the .txt file to the terminal, where they were screenshotted.
+Read Groups were then added to the .bam file using gatk AddOrReplaceReadGroups with input marked_duplicates.bam, 
+output ReadGroupsDone.bam, and other settings -RGID 1 -RGLB lib1 -RGPL ILLUMINA -RGPU NA -RGSM WS2
+To facilitate the use of the genome fasta file as a reference for variant calling, samtools faidx was used to make an index from the fasta.
+For the same reason a dictionary .dict file for the genome fasta was made using gatk CreateSequenceDictionary.
+A shell script running gatk --java-options "-Xmx4g" HaplotypeCaller with ReadGroupsDone.bam as an input, 
+outputting to a new .vcf file, with the genome fasta file as a reference was written and submitted to the queue.
+head was used to print the first lines of the .vcf file to the terminal, where they were screenshotted.
