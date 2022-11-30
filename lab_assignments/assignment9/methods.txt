@@ -1,0 +1,12 @@
+Orthofinder was installed with conda into a new conda environment.
+Primary Transcript Protein sequences for Arabidopsis thaliana, Oryza sativa, and Amborella trichopoda were downloaded from Phytozome in the form of compressed FASTA files.
+These files were decompressed, renamed to Athaliana.fa, Osativa.fa, and Atrichpoda.fa, and placed into a new directory.
+Orthofinder was run with the -f argument being the new directory.
+An error prevented Orthofinder from writing the Phylogenetic_Hierarchical_Orthogroups/N0.tsv, thus alternative methods were used to extract the necessary results.
+The total number of orthogroups was found in the file "/OrthoFinder/Results_Nov30/Comparative_Genomics_Statistics/Statistics_Overall.tsv" and copied to results.txt
+The number of O. sativa genes in the orthogroup of the Arabidopsis protein HAESA was found by searching for HAESA's designation, AT4G28490 in the "/OrthoFinder/Results_Nov30/Orthogroups/Orthogroups.txt" file using text editor tools and written into results.txt
+The error was corrected by altering the file miniconda3/envs/orthofinder/bin/scripts_of/newick.py to replace the deprecated element "rU" with the current "r"
+Orthofinder was again run with the -f argument being the new directory.
+The total number of orthogroups was extracted from the line number of the Phylogenetic_Hierarchical_Orthogroups/N0.tsv file and re-written in results.txt
+The number of rice genes in the same orthogroup as the newly chosen Arabidopsis Chalcone Synthase (AT5G13930) was found by using grep on the aforementioned T0 file and written into results.txt
+

@@ -1,0 +1,2 @@
+Number of orthogroups	17404
+Number of O. sativa genes in orthogroup of Arabidopsis Chalcone Synthase (AT5G13930)	1	
